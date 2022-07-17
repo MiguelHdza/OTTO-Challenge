@@ -128,19 +128,19 @@ public class Testcases {
     private static void LogFile (String LogText){
 
         Logger logger = Logger.getLogger("TestLog");
-        FileHandler fh;
-
-        try {
-            fh = new FileHandler(System.getProperty("user.home") + "/MyLogFile.log");
-            logger.addHandler(fh);
-            SimpleFormatter formatter = new SimpleFormatter();
-            fh.setFormatter(formatter);
-            logger.info(LogText);
-
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        FileHandler fh;
+//
+//        try {
+//            fh = new FileHandler(System.getProperty("user.home") + "/MyLogFile.log");
+//            logger.addHandler(fh);
+//            SimpleFormatter formatter = new SimpleFormatter();
+//            fh.setFormatter(formatter);
+//            logger.info(LogText);
+//
+//        } catch (SecurityException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
