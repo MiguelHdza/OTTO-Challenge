@@ -1,6 +1,5 @@
 package Test;
 
-//import net.bytebuddy.implementation.bind.annotation.This;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
