@@ -30,9 +30,9 @@ The Repository contains to important files, where the requirements are implement
 
 **********Configuration Section**********
 Two Browsers are supported for this Task, Chrome and Firefox, and it can be controlled through a Variable named "Browser" in the “Main.java” file.
-            String Browser = "Chrome";
-                                    Or
-            String Browser = "Firefox";
+          String Browser = "Chrome";
+                        Or
+          String Browser = "Firefox";
 If the variable is left empty or the Name of the Browser is not recognized, by default Browser is set to Firefox. For Example:
             String Browser = "Crome";            ->            Default Browser “Firefox”
 
