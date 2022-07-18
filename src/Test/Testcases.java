@@ -9,32 +9,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-//import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Testcases {
     public String Browser;
-    public String BrowserWebDriver;
-    public String WebDriverPath;
+    //public String BrowserWebDriver;
+    //public String WebDriverPath;
     public WebDriver driver;
     public WebDriverWait Wait ;
-    public Testcases(String Browser) {
-        //WebDriver driver;
+    public Testcases(String Browser, String BrowserWebDriver, String WebDriverPath) {
 
         this.Browser = Browser;
-        if (Browser.equals("Chrome")) {
-            //For Chrome
-            BrowserWebDriver = "webdriver.chrome.driver";
-            WebDriverPath = "C:\\Users\\migue\\Selenium\\Drivers\\Chrome\\chromedriver_win32\\chromedriver.exe";
-            System.setProperty(BrowserWebDriver,WebDriverPath);
-        } else {
-            //For Firefox
-            BrowserWebDriver = "webdriver.gecko.driver";
-            WebDriverPath = "C:\\Users\\migue\\Selenium\\Drivers\\Firefox\\geckodriver-v0.31.0-win64\\geckodriver.exe";
-            System.setProperty(BrowserWebDriver,WebDriverPath);
-        }
+
+        System.setProperty(BrowserWebDriver,WebDriverPath);
 
         LogFile("Constructor");
     }
@@ -42,12 +31,14 @@ public class Testcases {
     public void Testcase1 (String StringToSearch) {
         try
         {
+            //Create Browser Instance
             if (Browser.equals("Chrome")) {
                 driver = new ChromeDriver();            //For Chrome
             } else {
                 driver = new FirefoxDriver();           //For Firefox
             }
 
+            //Define the duration of the Wait for the Browser
             Wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
             driver.manage().window().maximize();
@@ -64,13 +55,13 @@ public class Testcases {
             //Open the first product
             Wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"san_resultSection\"]/article[1]"))).click();
 
-            //Validate, that the product detail page contains the string "Artikelbeschreibung"
+            //Validate, that the product detail page contains the string "StringToSearch"
             if ( driver.getPageSource().contains(StringToSearch)){
-                System.out.println("Text: " + StringToSearch + " found. ");
-                LogFile("Text: " + StringToSearch + " found. ");
+                System.out.println("\u001B[32m" + "Text: " + StringToSearch + " found. ");
+                //LogFile("Text: " + StringToSearch + " found. ");
             } else {
-                System.out.println("Text: " + StringToSearch + " not found. ");
-                LogFile("Text: " + StringToSearch + " not found. ");
+                System.out.println("\u001B[31m" + "Text: " + StringToSearch + " not found. ");
+                //LogFile("Text: " + StringToSearch + " not found. ");
             }
         }
         finally
@@ -84,12 +75,14 @@ public class Testcases {
     public void Testcase2 (String StringToSearch) {
         try
         {
+            //Create Browser Instance
             if (Browser.equals("Chrome")) {
                 driver = new ChromeDriver();                //For Chrome
             } else {
                 driver = new FirefoxDriver();               //For Firefox
             }
 
+            //Define the duration of the Wait for the Browser
             Wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
             driver.manage().window().maximize();
@@ -109,11 +102,11 @@ public class Testcases {
 
             //Validate, that the product detail page contains the string "Artikelbeschreibung"
             if (driver.getPageSource().contains(StringToSearch)){
-                System.out.println("Text: " + StringToSearch + " found. ");
-                LogFile("Text: " + StringToSearch + " found. ");
+                System.out.println("\u001B[32m" + "Text: " + StringToSearch + " found. ");
+                //LogFile("Text: " + StringToSearch + " found. ");
             } else {
-                System.out.println("Text: " + StringToSearch + " not found. ");
-                LogFile("Text: " + StringToSearch + " not found. ");
+                System.out.println("\u001B[31m" + "Text: " + StringToSearch + " not found. ");
+                //LogFile("Text: " + StringToSearch + " not found. ");
             }
         }
         finally
@@ -127,11 +120,11 @@ public class Testcases {
     //TODO LogFile
     private static void LogFile (String LogText){
 
-        Logger logger = Logger.getLogger("TestLog");
+//        Logger logger = Logger.getLogger("TestLog");
 //        FileHandler fh;
 //
 //        try {
-//            fh = new FileHandler(System.getProperty("user.home") + "/MyLogFile.log");
+//            fh = new FileHandler(System.getProperty("user.home") + "/TestLogFile.log");
 //            logger.addHandler(fh);
 //            SimpleFormatter formatter = new SimpleFormatter();
 //            fh.setFormatter(formatter);
