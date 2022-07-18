@@ -26,7 +26,7 @@ The requirements were described as follows:
 
 
 ------------------------------------------------------------------------------------------------------------------------
-The Repository contains to important files, where the requirements are implemented. The first one is the file “Main.java” and in it has the script to execute the test. The second one is the Testcases.java file, in which the Testcases were programmed.
+The Repository contains two important files, where the requirements are implemented. The first one is the file “Main.java” and in it has the script to execute the test. The second one is the Testcases.java file, in which the Testcases were programmed.
 
 **********Configuration Section**********
 Two Browsers are supported for this Task, Chrome and Firefox, and it can be controlled through a Variable named "Browser" in the “Main.java” file.
