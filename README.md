@@ -56,6 +56,7 @@ The variable to WebDriverPath difines where the WebDriver is located. Example:
             WebDriverPath = "C:\\Users\\migue\\Selenium\\Drivers\\Firefox\\geckodriver-v0.31.0-win64\\geckodriver.exe";
 
 
+
 **********Testcases**********
 The Testcases were implemented in the File “Testcases.java”. There is one definition of a Class with 1 constructor and 2 Methods.
 One of each method contains each of the required Testcase.
@@ -69,3 +70,4 @@ If the Page, in which the described Testcases are implemented, were changed, the
             By.xpath("//*[@id=\"nav_menu\"]/div/div/div/ul/li[17]/a")
             By.xpath("//*[@id=\"find_localNavigation\"]/div/div[1]/div[1]/div[2]/ul/li[3]")
             By.xpath("//*[@id=\"san_resultSection\"]/article[1]")
+
