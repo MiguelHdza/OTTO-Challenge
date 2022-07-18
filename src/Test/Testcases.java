@@ -15,8 +15,6 @@ import java.util.logging.SimpleFormatter;
 
 public class Testcases {
     public String Browser;
-    //public String BrowserWebDriver;
-    //public String WebDriverPath;
     public WebDriver driver;
     public WebDriverWait Wait ;
     public Testcases(String Browser, String BrowserWebDriver, String WebDriverPath) {
